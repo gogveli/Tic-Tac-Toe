@@ -1,0 +1,65 @@
+.jumbotron,h3{
+    text-align: center;
+}
+
+body {
+    background-color: rgb(32, 32, 32);
+    background-image: url("https://janschreiber.github.io/img2/black-chalk.jpg");
+    
+    font-family: 'Indie Flower', 'Comic Sans', cursive;
+}
+h3{
+    color:white;
+    font-size:25px;
+    margin:25px;
+}
+
+.kutu{
+    color:white;
+    border: 5px solid white;
+    height: 150px;
+    width: 150px;
+    
+    text-align: center;
+    vertical-align:middle;
+    font-size: 90px;
+    cursor: pointer;
+    color: aquamarine;
+}
+
+.kutu:hover{
+    border: 5px solid rgb(179,115,115);
+}
+
+
+/* Animasyonu tanımla */
+@keyframes drawLineThrough {
+    from {
+        top:50%;
+        width: 0; /* Çizginin başlangıç genişliği */
+    }
+    to {
+      width: 40%; /* Çizginin son genişliği */
+    }
+  }
+  
+  /* Div elementlerini çizmek için stil */
+  .drawn-line {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Çizgi elementi */
+  .drawn-line::after {
+    content: '';
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+    right:0%;
+    top:50%;
+    width: 0; /* Başlangıçta genişliği sıfır */
+    height: 10px; /* Çizgi kalınlığı */
+    background-color: red; /* Çizgi rengi */
+    animation: drawLineThrough 3s forwards; /* Animasyonu uygula */
+  }
+
